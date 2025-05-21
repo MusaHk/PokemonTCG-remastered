@@ -71,7 +71,6 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 - C++  
 - OOP Design Patterns  
 - File I/O (Binary)  
-- STL Containers (mainly `<vector>`)
 - Git for Version Control
 
 ## 🛠️ Building and Running (In the works, I'm new to this)
