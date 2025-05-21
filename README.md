@@ -13,6 +13,7 @@ You'll always find yourself being on the edge of your seat until a victor has be
 ## 🎮 Game Overview
 
 Each match pits two players against each other, each with a **randomly assigned team of 3 unique Pokémon**. Players have to make their choice between gathering intel via the **Pokédex** and/or offer a sacrifice to **Arceus' Altar**, all while looking for the best move on the board. The match ends when either side runs out of Pokémon.
+
 ---
 
 ## ⚔️ Core Gameplay Loop
@@ -48,12 +49,12 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 - **Hidden Information Layer** through a limited Pokédex scan.
 - **Comprehensive Logging** of every action and event in the game.
 - **Save/Load System** using binary files to preserve match progress.
-**Example log:**
-`→ [TURN 3] P1 uses "Shadow Pulse" on Dialga
-→ Dialga takes 30 damage
-→ Dialga fainted
-→ P1 gains 1 Altar charge
-→ Dialga triggers passive: Time Loop (next turn skipped for enemy) 
+**Example log:**  
+`→ [TURN 3] P1 uses "Shadow Pulse" on Dialga  
+→ Dialga takes 30 damage  
+→ Dialga fainted  
+→ P1 gains 1 Altar charge  
+→ Dialga triggers passive: Time Loop (next turn skipped for enemy)   
 → P1 uses Arceus' Altar: sacrifices 25% HP to revive Gengar at 10 HP`
 
 > [!NOTE]
@@ -82,7 +83,7 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 - C++  
 - OOP Design Patterns  
 - File I/O (Binary)  
-- STL Containers (mainly `<vector> `)
+- STL Containers (mainly `<vector>`)
 - Git for Version Control
 
 ---
