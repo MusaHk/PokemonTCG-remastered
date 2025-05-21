@@ -53,10 +53,11 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 > Only **one** EX Pokémon may be drafted per team at maximum. Example log not indicative of moves/passives actually used in the implementation, purely there for reference.
 
 ## 🧠 OOP Design & Requirement Coverage
+![UML Diagram](Pokemon_Project_UML.png)
 
 | Requirement               | Implementation Example                                      |
 |--------------------------|-------------------------------------------------------------|
-| **Inheritance**          | `PokémonEX` inheriting attributes and methods from `Pokémon` class.|
+| **Inheritance**          | `PokémonEX` extends`Pokémon` class.|
 | **Polymorphism**         | `apply()` methods on moves and passives                     |
 | **Composition**          | `Pokemon` composed of `Move[]`, `PassiveAbility`, etc.      |
 | **Aggregation**          | `Player` owns a `vector<Pokemon>` team                      |
@@ -70,7 +71,10 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 
 - C++  
 - OOP Design Patterns  
-- File I/O (Binary)  
+- File I/O (Binary)
+- [draw.io](https://app.diagrams.net) for the flowchart
+- [mermaid.js](https://www.mermaidchart.com) for the UML diagram
+- CMake to make building easier
 - Git for Version Control
 
 ## 🛠️ Building and Running (In the works, I'm new to this)
