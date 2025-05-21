@@ -40,14 +40,14 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 - **Comeback mechanics** via Arceus’ Altar.
 - **Hidden Information Layer** through a limited Pokédex scan.
 - **Comprehensive Logging** of every action and event in the game.
-- **Save/Load System** using binary files to preserve match progress.
-**Example log:**  
-`→ [TURN 3] P1 uses "Shadow Pulse" on Dialga  
-→ Dialga takes 30 damage  
-→ Dialga fainted  
-→ P1 gains 1 Altar charge  
-→ Dialga triggers passive: Time Loop (next turn skipped for enemy)   
-→ P1 uses Arceus' Altar: sacrifices 25% HP to revive Gengar at 10 HP`
+- **Save/Load System** using binary files to preserve match progress.<br/>
+**Example log:**<br/>
+→ [TURN 3] P1 uses "Shadow Pulse" on Dialga<br/>
+→ Dialga takes 30 damage<br/>
+→ Dialga fainted<br/>
+→ P1 gains 1 Altar charge<br/>
+→ Dialga triggers passive: Time Loop (next turn skipped for enemy)<br/>
+→ P1 uses Arceus' Altar: sacrifices 25% HP to revive Gengar at 10 HP
 
 > [!NOTE]
 > Only **one** EX Pokémon may be drafted per team at maximum. Example log not indicative of moves/passives actually used in the implementation, purely there for reference.
