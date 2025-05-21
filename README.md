@@ -8,13 +8,9 @@ Inspired by the classic Pokémon format, the game introduces a fresh twist: **co
 
 You'll always find yourself being on the edge of your seat until a victor has been decided, or find yourself perhaps tied on a noose, who knows. Just 10-12 Pokemon, yet enough permutations to make the game never feel stale. No advantage comes forth without sacrifice.
 
----
-
 ## 🎮 Game Overview
 
 Each match pits two players against each other, each with a **randomly assigned team of 3 unique Pokémon**. Players have to make their choice between gathering intel via the **Pokédex** and/or offer a sacrifice to **Arceus' Altar**, all while looking for the best move on the board. The match ends when either side runs out of Pokémon.
-
----
 
 ## ⚔️ Core Gameplay Loop
 
@@ -28,16 +24,12 @@ On each turn, a player may:
 > [!IMPORTANT]
 > You only attack once per turn, but you can freely scan, switch, or invoke the altar beforehand, this decision was made to make the games fast-paced, and to allow *devastating* comebacks within a **single** turn.
 
----
-
 ## 🔱 Arceus’ Altar
 
 Players gain **1 Altar charge** each time one of their Pokémon faints. Charges can be spent on powerful effects such as reviving a Pokémon, disabling enemy passives, or empowering your next move. These sacrifices give losing players the chance to deal a *destructive* blow to their opponents, all while the "winning players" *think* they've got the match in the bag.
 
 > [!TIP]
 > Take current passives on the field into account when deciding on a sacrifice.
-
----
 
 ## 📦 Features
 
@@ -60,8 +52,6 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 > [!NOTE]
 > Only **one** EX Pokémon may be drafted per team at maximum. Example log not indicative of moves/passives actually used in the implementation, purely there for reference.
 
----
-
 ## 🧠 OOP Design & Requirement Coverage
 
 | Requirement               | Implementation Example                                      |
@@ -76,8 +66,6 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 | **Logging**              | All moves, passives, altar effects, and game results|
 | **Binary Save/Load**     | Save and restore game state mid-match using binary files    |
 
----
-
 ## 🧪 Technologies Used
 
 - C++  
@@ -85,7 +73,5 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 - File I/O (Binary)  
 - STL Containers (mainly `<vector>`)
 - Git for Version Control
-
----
 
 ## 🛠️ Building and Running (In the works, I'm new to this)
