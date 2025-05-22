@@ -1,4 +1,4 @@
-# ⚡PokémonTCG-remastered
+# ⚡PokémonTCG-Remastered
 A turn-based strategy game where Pokémon have ambiguous abilities, conditional triggers and deceptive move sets, designed so that smart plays can snatch victory from defeat. Players must think not just about what their opponent can do, but what they might be hiding. 
 
 # 🧠 Game Design Core Philosophy
@@ -56,25 +56,25 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 ![UML Diagram](Pokemon_Project_UML.png)
 
 | Requirement               | Implementation Example                                      |
-|--------------------------|-------------------------------------------------------------|
-| **Inheritance**          | `PokémonEX` extends`Pokémon` class.|
-| **Polymorphism**         | `apply()` methods on moves and passives                     |
-| **Composition**          | `Pokemon` composed of `Move[]`, `PassiveAbility`, etc.      |
-| **Aggregation**          | `Player` owns a `vector<Pokemon>` team                      |
-| **Association**          | `Game` interacts with `Player`, `Logger`, and `GameContext` |
-| **Exception Handling**   | Custom exceptions for invalid actions, file I/O, etc.       |
-| **Templates**            | Generic logging function `logEvent<T>()` and possible generic team container |
-| **Logging**              | All moves, passives, altar effects, and game results|
-| **Binary Save/Load**     | Save and restore game state mid-match using binary files    |
+|--------------------------|--------------------------------------------------------------|
+| **Inheritance**          | `PokémonEX` extends `Pokémon` class.|
+| **Polymorphism**         | `execute()` methods for either scan, attack, or sacrificial actions.|
+| **Composition**          | `Pokemon` composed of `Move[]`, `PassiveAbility`, etc.|
+| **Aggregation**          | `Player` owns a `vector<Pokemon>` team.|
+| **Association**          | `Game` interacts with `Player`, `Logger`, and `GameContext`.|
+| **Exception Handling**   | Custom exceptions for invalid actions, file I/O, etc.|
+| **Templates**            | Generic logging function `logEvent<T>()`.|
+| **Logging**              | All moves, passives, altar effects, and game results.|
+| **Binary Save/Load**     | Save and restore game state mid-match using binary files.|
 
 ## 🧪 Technologies Used
 
 - C++  
 - OOP Design Patterns  
 - File I/O (Binary)
-- [draw.io](https://app.diagrams.net) for the flowchart
-- [mermaid.js](https://www.mermaidchart.com) for the UML diagram
-- CMake to make building easier
-- Git for Version Control
+- [draw.io](https://app.diagrams.net) (flowchart)
+- [mermaid.js](https://www.mermaidchart.com) (UML diagram)
+- CMake (build?)
+- Git (Version Control)
 
-## 🛠️ Building and Running (In the works, I'm new to this)
+## 🛠️ Building and Running (WIP)
