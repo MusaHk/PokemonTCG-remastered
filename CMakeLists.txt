@@ -24,7 +24,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(raylib raygui) # Clone the above defined repos
 
-add_executable(${PROJECT_NAME} main.cpp) # Choose files to compile
+add_executable(${PROJECT_NAME} main.cpp
+        WelcomeScreen.h
+        WelcomeScreen.cpp) # Choose files to compile
 
 # Needed for properly linking raygui
 set(GENERATED_HEADERS_DIR "${CMAKE_BINARY_DIR}/generated")
