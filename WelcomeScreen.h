@@ -6,6 +6,6 @@
 #define WELCOMESCREEN_H
 
 class WelcomeScreen {
-
+    
 };
 #endif //WELCOMESCREEN_H
