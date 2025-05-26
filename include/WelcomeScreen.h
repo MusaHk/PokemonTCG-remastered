@@ -10,18 +10,19 @@ class WelcomeScreen {
 
 private:
 
-    const int screenX = 736;
-    const int screenY = 920;
+    const int screenX = 1920;
+    const int screenY = 1180;
 
 protected:
 
     Music screenMusic{};
     Texture2D screenTexture{};
+    Font myFont{};
 
 public:
     // these functions will likely be inherited (and overridden) for BattleWindow and WinnerWindow later on.
     void init_music();
-    void init_window(); // textures and the window itself.
+    void init_window(); // textures, fonts and the window itself.
     void clear_music() const;
     void clear_window() const;
     void while_window_open();
