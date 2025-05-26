@@ -4,16 +4,16 @@
 #include "WelcomeScreen.h"
 void WelcomeScreen::init_window() {
     InitWindow(screenX, screenY, "PokemonTCG++");
-    screenTexture = LoadTexture("images/giratinaImage.jpg");
+    screenTexture = LoadTexture("assets/images/giratinaImage.jpg");
 }
 
 void WelcomeScreen::init_music() {
     InitAudioDevice();
-    screenMusic = LoadMusicStream("audio/giratina.mp3");
+    screenMusic = LoadMusicStream("assets/audio/giratina.mp3");
     PlayMusicStream(screenMusic);
 }
 
-void WelcomeScreen::while_window_open() const{
+void WelcomeScreen::while_window_open(){
     while (!WindowShouldClose()) {
         BeginDrawing();
         DrawTexture(screenTexture, 0, 0, WHITE);
@@ -24,8 +24,8 @@ void WelcomeScreen::while_window_open() const{
 }
 
 void WelcomeScreen::clear_music() const{
-    UnloadMusicStream(screenMusic);
     StopMusicStream(screenMusic);
+    UnloadMusicStream(screenMusic);
     CloseAudioDevice();
 }
 

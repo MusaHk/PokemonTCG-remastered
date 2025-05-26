@@ -24,7 +24,7 @@ public:
     void init_window(); // textures and the window itself.
     void clear_music() const;
     void clear_window() const;
-    void while_window_open() const;
+    void while_window_open();
     void draw_button();
     void when_button_clicked();
     void clear_button();
