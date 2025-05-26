@@ -20,7 +20,7 @@ On each turn, a player may:
 - **Use Pokédex Scan** *(once per game)* to reveal an opponent’s Pokémon passive
 - **Use Arceus’ Altar** *(if charges available)* to sacrifice something for a powerful buff
 - **Attack** with a move from their current Pokémon *(Main action)*
-![High level logic flow](Pokemon_Project_Flowchart.drawio.png)
+![High level logic flow](docs/Pokemon_Project_Flowchart.drawio.png)
 > [!IMPORTANT]
 > You only attack once per turn, but you can freely scan, switch, or invoke the altar beforehand, this decision was made to make the games fast-paced, and to allow *devastating* comebacks within a **single** turn.
 
@@ -53,7 +53,7 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 > Only **one** EX Pokémon may be drafted per team at maximum. Example log not indicative of moves/passives actually used in the implementation, purely there for reference.
 
 ## 🧠 OOP Design & Requirement Coverage
-![UML Diagram](finalUML.png)
+![UML Diagram](docs/finalUML.png)
 
 | Requirement               | Implementation Example                                      |
 |--------------------------|--------------------------------------------------------------|
