@@ -4,30 +4,16 @@
 
 #ifndef WELCOMESCREEN_H
 #define WELCOMESCREEN_H
-#include "raylib.h"
+#include "Screen.h"
 
-class WelcomeScreen {
-
+class WelcomeScreen final: public Screen  {
 private:
-
-    const int screenX = 1920;
-    const int screenY = 1180;
-
-protected:
-
-    Music screenMusic{};
-    Texture2D screenTexture{};
-    Font myFont{};
-
+    Rectangle newGameButton{};
+    Rectangle loadSavedButton{};
 public:
-    // these functions will likely be inherited (and overridden) for BattleWindow and WinnerWindow later on.
-    void init_music();
-    void init_window(); // textures, fonts and the window itself.
-    void clear_music() const;
-    void clear_window() const;
-    void while_window_open();
-    void draw_button();
-    void when_button_clicked();
-    void clear_button();
+    void init() override;
+    void update() override;
+    void draw() override;
+    void cleanup() override;
 };
 #endif //WELCOMESCREEN_H

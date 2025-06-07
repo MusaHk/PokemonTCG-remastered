@@ -1,51 +1,55 @@
-//
-// Created by User on 5/25/2025.
-//
 #include "WelcomeScreen.h"
-void WelcomeScreen::init_window() {
+
+void WelcomeScreen::init(){
     InitWindow(screenX, screenY, "PokemonTCG++");
-    screenTexture = LoadTexture("assets/images/gyradosWelcomeScreen.jpg");
-    myFont = LoadFont("assets/fonts/Extrude-90aK.ttf");
-}
-
-void WelcomeScreen::init_music() {
     InitAudioDevice();
-    screenMusic = LoadMusicStream("assets/audio/Route 209.mp3");
-    PlayMusicStream(screenMusic);
+
+    background = LoadTexture("assets/images/gyradosWelcomeScreen.jpg");
+    music = LoadMusicStream("assets/audio/Route 209.mp3");
+    font = LoadFont("assets/fonts/Extrude-90aK.ttf");
+
+    PlayMusicStream(music);
+
+    newGameButton = { 100, 300, 400, 80 };
+    loadSavedButton = { 100, 400, 400, 80 };
 }
 
-void WelcomeScreen::while_window_open(){
-    while (!WindowShouldClose()) {
-        BeginDrawing();
+void WelcomeScreen::update(){
+    UpdateMusicStream(music);
 
-        DrawTexture(screenTexture, 0, 0, WHITE);
-        DrawTextEx(myFont, "PokemonTCG++", (Vector2){100, 100}, 200 , 2, DARKBLUE);
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        Vector2 mouse = GetMousePosition();
 
-        UpdateMusicStream(screenMusic);
-        EndDrawing();
+        if (CheckCollisionPointRec(mouse, newGameButton)) {
+            // TODO: transition to BattlePrep screen
+        }
+        else if (CheckCollisionPointRec(mouse, loadSavedButton)) {
+            // TODO: load saved binary file
+        }
     }
 }
 
-void WelcomeScreen::clear_music() const{
-    StopMusicStream(screenMusic);
-    UnloadMusicStream(screenMusic);
+void WelcomeScreen::draw(){
+    BeginDrawing();
+    ClearBackground(RAYWHITE);
+
+    DrawTexture(background, 0, 0, WHITE);
+    DrawTextEx(font, "PokemonTCG++", {100, 100}, 120, 2, DARKBLUE);
+
+    DrawRectangleRec(newGameButton, LIGHTGRAY);
+    DrawText("New Game", 110, 320, 40, BLACK);
+
+    DrawRectangleRec(loadSavedButton, LIGHTGRAY);
+    DrawText("Load Saved Game", 110, 420, 40, BLACK);
+
+    EndDrawing();
+}
+
+void WelcomeScreen::cleanup(){
+    StopMusicStream(music);
+    UnloadMusicStream(music);
+    UnloadTexture(background);
+    UnloadFont(font);
     CloseAudioDevice();
-}
-
-void WelcomeScreen::clear_window() const{
-    UnloadTexture(screenTexture);
-    UnloadFont(myFont);
     CloseWindow();
-}
-
-void WelcomeScreen::draw_button() {
-
-}
-
-void WelcomeScreen::when_button_clicked() {
-
-}
-
-void WelcomeScreen::clear_button() {
-
 }

@@ -1,12 +1,17 @@
 #include "WelcomeScreen.h"
 
 int main() {
-    WelcomeScreen ws; // Add functionality to continue playing music when window's being dragged.
-    ws.init_window();
-    ws.init_music();
-    ws.while_window_open();
-    ws.clear_music();
-    ws.clear_window();
+    Screen* currentScreen = new WelcomeScreen();
+
+    currentScreen->init();
+
+    while (!WindowShouldClose()) {
+        currentScreen->update();
+        currentScreen->draw();
+    }
+
+    currentScreen->cleanup();
+    delete currentScreen;
 
     return 0;
 }
