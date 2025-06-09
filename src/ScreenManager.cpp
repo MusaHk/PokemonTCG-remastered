@@ -2,7 +2,7 @@
 // Created by User on 6/9/2025.
 //
 #include "ScreenManager.h"
-#include "BattlePrepScreen.h"
+#include "BattleScreen.h"
 
 void ScreenManager::set_screen(Screen* newScreen) {
     if (currentScreen) {
@@ -12,12 +12,13 @@ void ScreenManager::set_screen(Screen* newScreen) {
     currentScreen = newScreen;
     currentScreen->init();
 }
-
 void ScreenManager::update() {
     if (currentScreen) {
-        switch (ScreenType next = currentScreen->update()) {
-            case ScreenType::BATTLE_PREP:
-                set_screen(new BattlePrepScreen());
+        ScreenType next = currentScreen->update();
+
+        switch (next) {
+            case ScreenType::BATTLE:
+                set_screen(new BattleScreen());
                 break;
             case ScreenType::LOAD_SAVED:
                 // TODO: implement loading later
@@ -27,6 +28,7 @@ void ScreenManager::update() {
         }
     }
 }
+
 
 
 void ScreenManager::draw() {

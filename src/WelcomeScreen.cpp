@@ -21,18 +21,17 @@ ScreenType WelcomeScreen::update() {
         Vector2 mouse = GetMousePosition();
 
         if (CheckCollisionPointRec(mouse, newGameButton)) {
-            return ScreenType::BATTLE_PREP;
+            return ScreenType::BATTLE;
         } else if (CheckCollisionPointRec(mouse, loadSavedButton)) {
             return ScreenType::LOAD_SAVED;
         }
     }
-
     return ScreenType::NONE;
 }
 
 void WelcomeScreen::draw(){
     BeginDrawing();
-    ClearBackground(RAYWHITE);
+    ClearBackground(BLACK);
 
     DrawTexture(background, 0, 0, WHITE);
     DrawTextEx(font, "PokemonTCG++", {100, 100}, 120, 2, DARKBLUE);

@@ -8,7 +8,7 @@
 
 enum class ScreenType {
     NONE,
-    BATTLE_PREP,
+    BATTLE,
     LOAD_SAVED,
 };
 

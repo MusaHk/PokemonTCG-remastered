@@ -28,7 +28,7 @@ add_executable(${PROJECT_NAME}
         src/main.cpp
         src/WelcomeScreen.cpp
         src/ScreenManager.cpp
-        src/BattlePrepScreen.cpp) # Choose files to compile
+        src/BattleScreen.cpp) # Choose files to compile
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
