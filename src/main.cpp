@@ -1,17 +1,15 @@
+#include "ScreenManager.h"
 #include "WelcomeScreen.h"
 
 int main() {
-    Screen* currentScreen = new WelcomeScreen();
-
-    currentScreen->init();
+    ScreenManager manager;
+    manager.set_screen(new WelcomeScreen());
 
     while (!WindowShouldClose()) {
-        currentScreen->update();
-        currentScreen->draw();
+        manager.update();
+        manager.draw();
     }
 
-    currentScreen->cleanup();
-    delete currentScreen;
-
+    manager.cleanup();
     return 0;
 }

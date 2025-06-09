@@ -12,7 +12,7 @@ private:
     Rectangle loadSavedButton{};
 public:
     void init() override;
-    void update() override;
+    ScreenType update() override;
     void draw() override;
     void cleanup() override;
 };

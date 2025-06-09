@@ -26,7 +26,9 @@ FetchContent_MakeAvailable(raylib raygui) # Clone the above defined repos
 
 add_executable(${PROJECT_NAME}
         src/main.cpp
-        src/WelcomeScreen.cpp) # Choose files to compile
+        src/WelcomeScreen.cpp
+        src/ScreenManager.cpp
+        src/BattlePrepScreen.cpp) # Choose files to compile
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 

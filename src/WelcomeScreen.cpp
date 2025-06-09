@@ -14,19 +14,20 @@ void WelcomeScreen::init(){
     loadSavedButton = { 100, 400, 400, 80 };
 }
 
-void WelcomeScreen::update(){
+ScreenType WelcomeScreen::update() {
     UpdateMusicStream(music);
 
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         Vector2 mouse = GetMousePosition();
 
         if (CheckCollisionPointRec(mouse, newGameButton)) {
-            // TODO: transition to BattlePrep screen
-        }
-        else if (CheckCollisionPointRec(mouse, loadSavedButton)) {
-            // TODO: load saved binary file
+            return ScreenType::BATTLE_PREP;
+        } else if (CheckCollisionPointRec(mouse, loadSavedButton)) {
+            return ScreenType::LOAD_SAVED;
         }
     }
+
+    return ScreenType::NONE;
 }
 
 void WelcomeScreen::draw(){

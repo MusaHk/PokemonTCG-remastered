@@ -6,6 +6,12 @@
 #define SCREEN_H
 #include "raylib.h"
 
+enum class ScreenType {
+    NONE,
+    BATTLE_PREP,
+    LOAD_SAVED,
+};
+
 class Screen {
 protected:
     const int screenX = 1920;
@@ -15,7 +21,7 @@ protected:
     Texture2D background{};
 public:
     virtual void init() = 0;
-    virtual void update() = 0;
+    virtual ScreenType update() = 0;
     virtual void draw() = 0;
     virtual void cleanup() = 0;
     virtual ~Screen() = default;
