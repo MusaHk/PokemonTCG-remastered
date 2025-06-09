@@ -29,8 +29,6 @@ void ScreenManager::update() {
     }
 }
 
-
-
 void ScreenManager::draw() {
     if (currentScreen) currentScreen->draw();
 }

@@ -7,7 +7,7 @@ void BattleScreen::init() {
     InitWindow(screenX, screenY, "Battle");
     InitAudioDevice();
     background = LoadTexture("assets/images/BattleScreenClouds.jpg");
-    music = LoadMusicStream("assets/audio/Route 209.mp3");
+    music = LoadMusicStream("assets/audio/giratina.mp3");
     font = LoadFont("assets/fonts/Extrude-90aK.ttf");
 
     PlayMusicStream(music);

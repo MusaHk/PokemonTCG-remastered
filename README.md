@@ -53,7 +53,7 @@ Players gain **1 Altar charge** each time one of their Pokémon faints. Charges 
 > Only **one** EX Pokémon may be drafted per team at maximum. Example log not indicative of moves/passives actually used in the implementation, purely there for reference.
 
 ## 🧠 OOP Design & Requirement Coverage
-![UML Diagram](docs/finalUML.png)
+![UML Diagram](docs/FinalUMLPP.png)
 
 | Requirement               | Implementation Example                                      |
 |--------------------------|--------------------------------------------------------------|
