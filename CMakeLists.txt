@@ -30,10 +30,13 @@ add_executable(${PROJECT_NAME}
         src/ScreenManager.cpp
         src/BattleScreen.cpp
         src/String.cpp
-        src/Move.cpp
-        src/PassiveAbility.cpp
         src/Logger.cpp
-        src/GameContext.cpp) # Choose files to compile
+        src/GameContext.cpp
+        src/UltraNecrozma.cpp
+        src/AttackAction.cpp
+        src/ScanAction.cpp
+        src/AltarSacrificeAction.cpp
+        src/Player.cpp) # Choose files to compile
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
