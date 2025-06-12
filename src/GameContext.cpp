@@ -3,7 +3,5 @@
 //
 #include "GameContext.h"
 
-GameContext::GameContext(Game* game, Player* currentPlayer, Player* opponent,
-                         Pokemon* attacker, Pokemon* defender)
-    : game(game), currentPlayer(currentPlayer), opponent(opponent),
-      attacker(attacker), defender(defender), logger("docs/log.txt"){}
+GameContext::GameContext(Game* game, Player* currentPlayer, Player* opponent, Pokemon* attacker, Pokemon* defender, Logger* logger)
+    : game(game), currentPlayer(currentPlayer), opponent(opponent), attacker(attacker), defender(defender),logger(logger){}

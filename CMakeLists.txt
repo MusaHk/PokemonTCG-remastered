@@ -36,7 +36,8 @@ add_executable(${PROJECT_NAME}
         src/AttackAction.cpp
         src/ScanAction.cpp
         src/AltarSacrificeAction.cpp
-        src/Player.cpp) # Choose files to compile
+        src/Player.cpp
+        src/Game.cpp) # Choose files to compile
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 

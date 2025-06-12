@@ -56,5 +56,6 @@ public:
     string regrow();
     [[nodiscard]] int length()  const;
     void clear();
+    const char* c_str() const { return str; }
 };
 #endif //STRING_H
