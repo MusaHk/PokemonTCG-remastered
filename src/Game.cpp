@@ -1,7 +1,8 @@
 #include "Game.h"
-#include "Action.h"
-#include "UltraNecrozma.h"
+#include "ActionHeaders/Action.h"
+#include "PokemonHeaders/UltraNecrozma.h"
 #include <fstream>
+#include "PokemonHeaders/Dialga.h"
 
 Game::Game(Player* p1, Player* p2)
     : player1(p1), player2(p2), currentPlayer(p1), opponentPlayer(p2),
@@ -14,8 +15,8 @@ Game::~Game() {
 
 void Game::start() {
     Dynamic_array<Pokemon*> pool;
-    pool.push(new UltraNecrozma());  // will add more later
-    pool.push(new UltraNecrozma());  // placeholder
+    pool.push(new UltraNecrozma());
+    pool.push(new UltraNecrozma());
 
     assignRandomTeams(pool);
 

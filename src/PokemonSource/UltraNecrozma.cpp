@@ -1,4 +1,4 @@
-#include "UltraNecrozma.h"
+#include "PokemonHeaders/UltraNecrozma.h"
 #include "GameContext.h"
 #include "Player.h"
 
@@ -12,6 +12,7 @@ UltraNecrozma::UltraNecrozma()
 void UltraNecrozma::applyPassive(GameContext& ctx) {
     if (getCurrentHP() < getMaxHP() / 2) {
         gainEnergy(1);  // Bonus +1 energy if HP < 50%
+        ctx.getLogger().logEvent("Radiant Overflow activated! UltraNecrozma gained +1 energy.");
     }
 }
 
@@ -24,27 +25,45 @@ void UltraNecrozma::applyMove(int moveIndex, GameContext& ctx) {
     Pokemon* target = opponent->getActivePokemon();
     int damage = 0;
 
-    if (moveIndex == 0) {  // Prismatic Slash
-        useEnergy(1);
-        damage = 20;
-        if (getCurrentEnergy() > target->getCurrentEnergy()) {
-            damage += 10;
+    switch (moveIndex) {
+        case 0: {  // Prismatic Slash
+            useEnergy(1);
+            damage = 20;
+            if (getCurrentEnergy() > target->getCurrentEnergy()) {
+                damage += 10;
+                ctx.getLogger().logEvent("Prismatic Slash power increased due to energy advantage!");
+            }
+            target->takeDamage(damage);
+            ctx.getLogger().logEvent("UltraNecrozma used Prismatic Slash for " + string::itos(damage) + " damage.");
+            break;
         }
-        target->takeDamage(damage);
-    } else if (moveIndex == 1) {  // Light Devourer
-        useEnergy(3);
-        damage = 40;
-        target->takeDamage(damage);
-        if (target->getCurrentEnergy() > 0) {
-            target->useEnergy(1);
-            gainEnergy(1);
+        case 1: {  // Light Devourer
+            useEnergy(3);
+            damage = 40;
+            target->takeDamage(damage);
+            ctx.getLogger().logEvent("UltraNecrozma used Light Devourer for " + string::itos(damage) + " damage.");
+            
+            if (target->getCurrentEnergy() > 0) {
+                target->useEnergy(1);
+                gainEnergy(1);
+                ctx.getLogger().logEvent("Light Devourer absorbed 1 energy from the opponent!");
+            }
+            break;
         }
-    } else if (moveIndex == 2) {  // Light That Burns the Sky
-        useEnergy(5);
-        // Deal 60 to all opponents (just one for now)
-        target->takeDamage(60);
-        takeDamage(10); // self-damage
-        currentEnergy = 0; // Lose all energy
+        case 2: {  // Light That Burns the Sky
+            useEnergy(5);
+            target->takeDamage(60);
+            ctx.getLogger().logEvent("UltraNecrozma unleashed Light That Burns the Sky for 60 damage!");
+            
+            takeDamage(10);
+            ctx.getLogger().logEvent("UltraNecrozma took 10 recoil damage.");
+            
+            currentEnergy = 0;
+            ctx.getLogger().logEvent("UltraNecrozma depleted all its energy.");
+            break;
+        }
+        default:
+            break;
     }
 }
 

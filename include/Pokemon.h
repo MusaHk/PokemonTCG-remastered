@@ -16,10 +16,13 @@ protected:
     int maxEnergy;
     int currentEnergy;
     bool isEX;
-    Texture2D frontSprite;
-    Texture2D backSprite;
-    Music themeMusic;
-
+    Texture2D frontSprite{};
+    Texture2D backSprite{};
+    Music themeMusic{};
+    int lastDamageTaken = 0;
+    int lastMoveUsed = -1;
+    bool passiveUsed = false;
+    int attackModifier = 0;
 public:
     Pokemon(const string& name, int maxHP, int maxEnergy, bool isEX, const char* frontSpritePath, const char* backSpritePath,
             const char* musicPath)
@@ -47,9 +50,25 @@ public:
     bool isFainted() const {
         return currentHP <= 0;
     }
-    void takeDamage(int amount) {
-        currentHP = currentHP > amount ? currentHP - amount : 0;
+    virtual void onTurnEnd(GameContext& ctx) {}
+    void modifyAttackDamage(int amount) {
+        attackModifier = amount;
     }
+    virtual void takeDamage(int amount, GameContext& context) {
+        currentHP -= amount;
+        if (currentHP < 0) currentHP = 0;
+    }
+
+    virtual void takeDamage(int amount) {
+        if (currentHP > amount) {
+            currentHP -= amount;
+            lastDamageTaken = amount;
+        } else {
+            lastDamageTaken = currentHP;
+            currentHP = 0;
+        }
+    }
+
     void heal(int amount) {
         currentHP = (currentHP + amount < maxHP) ? currentHP + amount : maxHP;
     }
@@ -82,7 +101,8 @@ public:
     virtual bool canUseMove(int moveIndex) const {
         return currentEnergy >= getMoveCost(moveIndex);
     }
-
+    int getLastDamageTaken() const { return lastDamageTaken; }
+    int getLastMoveUsed() const { return lastMoveUsed; }
     virtual string getPassiveName() const = 0;
     virtual string getPassiveDescription() const = 0;
 };

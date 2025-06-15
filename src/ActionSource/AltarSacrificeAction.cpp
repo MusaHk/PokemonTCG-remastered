@@ -1,4 +1,4 @@
-#include "AltarSacrificeAction.h"
+#include "ActionHeaders/AltarSacrificeAction.h"
 #include "Player.h"
 #include "GameContext.h"
 

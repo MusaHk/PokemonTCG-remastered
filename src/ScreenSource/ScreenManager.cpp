@@ -1,8 +1,8 @@
 //
 // Created by User on 6/9/2025.
 //
-#include "ScreenManager.h"
-#include "BattleScreen.h"
+#include "ScreenHeaders/ScreenManager.h"
+#include "ScreenHeaders/BattleScreen.h"
 
 void ScreenManager::set_screen(Screen* newScreen) {
     if (currentScreen) {

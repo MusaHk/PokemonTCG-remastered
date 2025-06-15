@@ -26,18 +26,27 @@ FetchContent_MakeAvailable(raylib raygui) # Clone the above defined repos
 
 add_executable(${PROJECT_NAME}
         src/main.cpp
-        src/WelcomeScreen.cpp
-        src/ScreenManager.cpp
-        src/BattleScreen.cpp
+        src/ScreenSource/WelcomeScreen.cpp
+        src/ScreenSource/ScreenManager.cpp
+        src/ScreenSource/BattleScreen.cpp
         src/String.cpp
         src/Logger.cpp
         src/GameContext.cpp
-        src/UltraNecrozma.cpp
-        src/AttackAction.cpp
-        src/ScanAction.cpp
-        src/AltarSacrificeAction.cpp
+        src/PokemonSource/UltraNecrozma.cpp
+        src/ActionSource/AttackAction.cpp
+        src/ActionSource/ScanAction.cpp
+        src/ActionSource/AltarSacrificeAction.cpp
         src/Player.cpp
-        src/Game.cpp) # Choose files to compile
+        src/Game.cpp
+        src/PokemonSource/Dialga.cpp
+        src/PokemonSource/MegaRayquaza.cpp
+        src/PokemonSource/ZygardeComplete.cpp
+        src/PokemonSource/Mewtwo.cpp
+        src/PokemonSource/Darkrai.cpp
+        src/PokemonSource/Reshiram.cpp
+        src/PokemonSource/Zekrom.cpp
+        src/PokemonSource/Palkia.cpp
+        src/PokemonSource/Giratina.cpp) # Choose files to compile
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 

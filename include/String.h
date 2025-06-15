@@ -4,7 +4,6 @@
 
 #ifndef STRING_H
 #define STRING_H
-
 #include <iostream>
 class string {
     int len{};
@@ -23,8 +22,28 @@ public:
     string operator+(const string& s) const;
     string& operator+=(const string& s);
     string& operator=(const string& s);
+    bool operator==(const string& other) const {
+        return is_equal(other);
+    }
+
+    bool operator==(const char* s) const {
+        return is_equal(string(s));
+    }
+
+    friend bool operator==(const char* s, const string& str) {
+        return str.is_equal(string(s));
+    }
+
     const char operator[](int i) const;
     char & operator[](int i );
+    string operator+(const char* s) const {
+        return (*this) + string(s);
+    }
+
+    friend string operator+(const char* s, const string& str) {
+        return string(s) + str;
+    }
+
     //utility functions
     static string itos(int n);
     string insert_char(int n, char s);

@@ -14,6 +14,8 @@ private:
     Pokemon* activePokemon;
     bool pokedexUsed;
     int altarCharges;
+    bool hasExtraTurn = false;
+
 
 public:
     Player(const Dynamic_array<Pokemon*>& initialTeam);
@@ -30,7 +32,9 @@ public:
     int getAltarCharges() const { return altarCharges; }
     void gainAltarCharge(int count = 1) { altarCharges += count; }
     void useAltarCharge() { if (altarCharges > 0) --altarCharges; }
-
+    void grantExtraTurn() {
+        hasExtraTurn = true;
+    }
     Action* chooseAction(GameContext& context);
 
     void onPokemonFainted();

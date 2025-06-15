@@ -1,4 +1,4 @@
-#include "WelcomeScreen.h"
+#include "ScreenHeaders/WelcomeScreen.h"
 
 void WelcomeScreen::init(){
     background = LoadTexture("assets/images/gyradosWelcomeScreen.jpg");

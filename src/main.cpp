@@ -1,5 +1,5 @@
-#include "ScreenManager.h"
-#include "WelcomeScreen.h"
+#include "ScreenHeaders/ScreenManager.h"
+#include "ScreenHeaders/WelcomeScreen.h"
 int main() {
     InitWindow(1920, 1180, "PokemonTCG++");
     InitAudioDevice();

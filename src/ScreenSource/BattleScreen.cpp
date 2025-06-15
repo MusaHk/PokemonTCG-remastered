@@ -1,4 +1,4 @@
-#include "BattleScreen.h"
+#include "ScreenHeaders/BattleScreen.h"
 #include <cstdio>  // for std::sprintf
 
 static const char* BACK_FMT  = "assets/sprites/back/%sBack.gif";

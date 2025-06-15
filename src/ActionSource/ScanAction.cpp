@@ -1,4 +1,4 @@
-#include "ScanAction.h"
+#include "ActionHeaders/ScanAction.h"
 #include "Player.h"
 #include "GameContext.h"
 #include "String.h"
