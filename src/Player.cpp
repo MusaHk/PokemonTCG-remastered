@@ -23,6 +23,7 @@ void Player::switchPokemon(int index) {
     if (index >= 0 && index < team.size() && !team[index]->isFainted()) {
         activePokemon = team[index];
     }
+    activePokemon->playTheme();
 }
 
 Action* Player::chooseAction(GameContext& context) {

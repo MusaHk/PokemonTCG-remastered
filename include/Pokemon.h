@@ -67,6 +67,7 @@ public:
         StopMusicStream(themeMusic);
         PlayMusicStream(themeMusic);
     }
+    Music& getThemeMusic() { return themeMusic; }
 
     virtual void onEntry(GameContext& ctx) = 0;
     virtual void onExit(GameContext& ctx) {}

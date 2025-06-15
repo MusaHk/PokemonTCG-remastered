@@ -13,19 +13,30 @@ void ScreenManager::set_screen(Screen* newScreen) {
     currentScreen->init();
 }
 void ScreenManager::update() {
-    if (currentScreen) {
-        ScreenType next = currentScreen->update();
+    if (!currentScreen) return;
 
-        switch (next) {
-            case ScreenType::BATTLE:
-                set_screen(new BattleScreen());
-                break;
-            case ScreenType::LOAD_SAVED:
-                // TODO: implement loading later
-                break;
-            default:
-                break;
+    ScreenType next = currentScreen->update();
+
+    if (next == ScreenType::NONE) return;
+
+    switch (next) {
+        case ScreenType::BATTLE: {
+            if (!game) {
+                Dynamic_array<Pokemon*> pool;
+                Player* p1 = new Player(pool);
+                Player* p2 = new Player(pool);
+                game = new Game(p1, p2);
+            }
+            std::cout << "Switching to BattleScreen\n";
+            set_screen(new BattleScreen(game));
+            break;
         }
+        case ScreenType::LOAD_SAVED: {
+            // TODO: implement loading later.
+            break;
+        }
+        default:
+            break;
     }
 }
 
@@ -38,5 +49,9 @@ void ScreenManager::cleanup() {
         currentScreen->cleanup();
         delete currentScreen;
         currentScreen = nullptr;
+    }
+    if (game) {
+        delete game;
+        game = nullptr;
     }
 }

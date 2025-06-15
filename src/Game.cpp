@@ -14,8 +14,8 @@ Game::~Game() {
 
 void Game::start() {
     Dynamic_array<Pokemon*> pool;
-    // pool.push(new UltraNecrozma());  // will add more later
-    // pool.push(new UltraNecrozma());  // placeholder
+    pool.push(new UltraNecrozma());  // will add more later
+    pool.push(new UltraNecrozma());  // placeholder
 
     assignRandomTeams(pool);
 
@@ -29,6 +29,7 @@ void Game::start() {
 
     currentPlayer->getActivePokemon()->playTheme();
     currentPlayer->getActivePokemon()->onEntry(*context);
+    context->getAttacker()->playTheme();  // Player 1 goes first
 }
 
 void Game::assignRandomTeams(const Dynamic_array<Pokemon*>& pool) {

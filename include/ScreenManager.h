@@ -6,10 +6,12 @@
 #define SCREENMANAGER_H
 
 #include "Screen.h"
+#include "Game.h"
 
 class ScreenManager {
 private:
     Screen* currentScreen = nullptr;
+    Game* game = nullptr;
 public:
     void set_screen(Screen* newScreen);
     void update();

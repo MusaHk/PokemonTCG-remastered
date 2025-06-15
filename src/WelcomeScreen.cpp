@@ -1,9 +1,6 @@
 #include "WelcomeScreen.h"
 
 void WelcomeScreen::init(){
-    InitWindow(screenX, screenY, "PokemonTCG++");
-    InitAudioDevice();
-
     background = LoadTexture("assets/images/gyradosWelcomeScreen.jpg");
     music = LoadMusicStream("assets/audio/Route 209.mp3");
     font = LoadFont("assets/fonts/Extrude-90aK.ttf");
@@ -50,6 +47,4 @@ void WelcomeScreen::cleanup(){
     UnloadMusicStream(music);
     UnloadTexture(background);
     UnloadFont(font);
-    CloseAudioDevice();
-    CloseWindow();
 }
