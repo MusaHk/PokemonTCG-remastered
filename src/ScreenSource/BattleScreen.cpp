@@ -14,7 +14,7 @@ BattleScreen::BattleScreen(Game* game)
 {}
 
 void BattleScreen::init() {
-    background = LoadTexture("assets/images/BattleScreenClouds.jpg");
+    background = LoadTexture("assets/images/BattleScreen.jpg");
     font = LoadFont("assets/fonts/Extrude-90aK.ttf");
 
     game->start();
